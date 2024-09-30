@@ -2,8 +2,12 @@ export function buildNav() {
   const header = document.getElementById("header");
   const nav = document.createElement("nav");
   const input = document.createElement("input");
+  input.id = "myinput";
   const button = document.createElement("button");
+  button.id = "mybutton";
+
   const yourName = document.createElement("h1");
+  yourName.id = "yourname";
 
   button.textContent = "button";
 
@@ -11,18 +15,4 @@ export function buildNav() {
   nav.appendChild(input);
   nav.appendChild(button);
   nav.appendChild(yourName);
-  getName(button, input, yourName);
-}
-
-function getName(button, input, yourName) {
-  button.addEventListener("click", (e) => {
-    const value = input.value;
-    yourName.innerHTML = value;
-  });
-  input.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-      const value = input.value;
-      yourName.innerHTML = value;
-    }
-  });
 }
