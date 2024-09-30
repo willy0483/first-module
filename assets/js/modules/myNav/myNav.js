@@ -1,4 +1,6 @@
-export function buildNav() {
+import getName from "../getName/getName.js";
+
+export default function buildNav() {
   const header = document.getElementById("header");
   const nav = document.createElement("nav");
   const input = document.createElement("input");
@@ -15,4 +17,14 @@ export function buildNav() {
   nav.appendChild(input);
   nav.appendChild(button);
   nav.appendChild(yourName);
+
+  button.addEventListener("click", (e) => {
+    getName(input.value);
+  });
+
+  input.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+      getName(input.value);
+    }
+  });
 }

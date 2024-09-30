@@ -1,4 +1,4 @@
-export function myName() {
+export default function myName() {
   const headerContainer = document.getElementById("header");
   const h1 = document.createElement("h1");
 
